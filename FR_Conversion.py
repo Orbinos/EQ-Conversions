@@ -32,13 +32,13 @@ def convert_perfect_fr(raw_svg, output_filename="perfect_fr_graph.txt"):
     points_array, PATH_Y_OFFSET = parse_svg_data(raw_svg)
     
     # ==========================================
-    # ⚙️ 1. EXPORT OFFSET
+    # 1. EXPORT OFFSET
     # ==========================================
     # Shifts the 0 dB graph up to standard measurement volume
     TARGET_OFFSET_DB = 75.0 
 
     # ==========================================
-    # 📐 2. THE ABSOLUTE Y-AXIS KEYS 
+    # 2. THE ABSOLUTE Y-AXIS KEYS 
     # ==========================================
     DB_5_Y = 130.0495
     DB_MINUS_5_Y = 184.8243
@@ -72,10 +72,10 @@ def convert_perfect_fr(raw_svg, output_filename="perfect_fr_graph.txt"):
         for fq, db in zip(benchmark_freqs, smoothed_db):
             f.write(f"{fq:.2f} {db:.3f}\n")
             
-    print(f"✅ Absolute calibration complete! Saved {len(benchmark_freqs)} points.")
+    print(f"Absolute calibration complete! Saved {len(benchmark_freqs)} points.")
 
 # ==========================================
-# 📥 3. PASTE YOUR SVG TAG BELOW
+# 3. PASTE YOUR SVG TAG BELOW
 # ==========================================
 # You can now paste the entire <path ... > tag here. 
 raw_svg_input = """
